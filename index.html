@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>World Global Voting for New Global Leader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .country {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .country img {
+      width: 100px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .details {
+      flex-grow: 1;
+    }
+    .vote-button {
+      background: green;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .result {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>World Global Voting for New Global Leader</h1>
+
+<!-- INDIA -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/in.png" alt="India Flag">
+    <div class="details">
+      <h3>India - Narendra Modi</h3>
+      <p>Votes: <span id="votes-india">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('india')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Narendra_Modi_2022.jpg" alt="Narendra Modi">
+  </div>
+</div>
+
+<!-- RUSSIA -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/ru.png" alt="Russia Flag">
+    <div class="details">
+      <h3>Russia - Vladimir Putin</h3>
+      <p>Votes: <span id="votes-russia">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('russia')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Vladimir_Putin_2020.jpg" alt="Vladimir Putin">
+  </div>
+</div>
+
+<!-- UNITED STATES -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/us.png" alt="United States Flag">
+    <div class="details">
+      <h3>United States - Joe Biden</h3>
+      <p>Votes: <span id="votes-us">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('us')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Joe_Biden_presidential_portrait.jpg" alt="Joe Biden">
+  </div>
+</div>
+
+<!-- CHINA -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/cn.png" alt="China Flag">
+    <div class="details">
+      <h3>China - Xi Jinping</h3>
+      <p>Votes: <span id="votes-china">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('china')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Xi_Jinping_2019.jpg" alt="Xi Jinping">
+  </div>
+</div>
+
+<!-- UNITED KINGDOM -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/gb.png" alt="United Kingdom Flag">
+    <div class="details">
+      <h3>United Kingdom - Rishi Sunak</h3>
+      <p>Votes: <span id="votes-uk">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('uk')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rishi_Sunak_MP.jpg" alt="Rishi Sunak">
+  </div>
+</div>
+
+<!-- GERMANY -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/de.png" alt="Germany Flag">
+    <div class="details">
+      <h3>Germany - Olaf Scholz</h3>
+      <p>Votes: <span id="votes-germany">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('germany')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Olaf_Scholz_MSC_2022.jpg" alt="Olaf Scholz">
+  </div>
+</div>
+
+<!-- FRANCE -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/fr.png" alt="France Flag">
+    <div class="details">
+      <h3>France - Emmanuel Macron</h3>
+      <p>Votes: <span id="votes-france">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('france')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Emmanuel_Macron_2022.jpg" alt="Emmanuel Macron">
+  </div>
+</div>
+
+<!-- JAPAN -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/jp.png" alt="Japan Flag">
+    <div class="details">
+      <h3>Japan - Fumio Kishida</h3>
+      <p>Votes: <span id="votes-japan">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('japan')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Fumio_Kishida_20211005.jpg" alt="Fumio Kishida">
+  </div>
+</div>
+
+<!-- ISRAEL -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/il.png" alt="Israel Flag">
+    <div class="details">
+      <h3>Israel - Benjamin Netanyahu</h3>
+      <p>Votes: <span id="votes-israel">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('israel')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Benjamin_Netanyahu_2018.jpg" alt="Benjamin Netanyahu">
+  </div>
+</div>
+
+<!-- PAKISTAN -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/pk.png" alt="Pakistan Flag">
+    <div class="details">
+      <h3>Pakistan - Shehbaz Sharif</h3>
+      <p>Votes: <span id="votes-pakistan">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('pakistan')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Shehbaz_Sharif_2022.jpg" alt="Shehbaz Sharif">
+  </div>
+</div>
+
+<!-- BANGLADESH -->
+<div class="country">
+  <div class="info">
+    <img src="https://flagcdn.com/w320/bd.png" alt="Bangladesh Flag">
+    <div class="details">
+      <h3>Bangladesh - Sheikh Hasina</h3>
+      <p>Votes: <span id="votes-bangladesh">0</span></p>
+      <input type="text" placeholder="Name, Country, State, District">
+      <button class="vote-button" onclick="vote('bangladesh')">Vote</button>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Sheikh_Hasina_2022.jpg" alt="Sheikh Hasina">
+  </div>
+</div>
+
+<!--
+::contentReference[oaicite:10]{index=10}
+ 
+
